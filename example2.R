@@ -11,7 +11,7 @@ url <- "https://en.wikipedia.org/wiki/Vincent_van_Gogh"
 gogh_parsed <-  htmlParse(rawToChar(GET(url)$content))
 
 # Загрузка гиперссылок, распечатаем первые 5 
-x <- getHTMLLinks(gogh_parsed)[1:5]
+x <- getHTMLLinks(gogh_parsed)
 x
 # Загрузка списков (теги <ul>, <ol>), распечатаем первые 5 строки из 10-го списка
 readHTMLList(gogh_parsed )[[10]][1:5]
