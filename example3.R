@@ -1,3 +1,7 @@
+library(stringr)
+library(XML)
+library(httr)
+
 
 # Возьмем данные за 2016 год:
 url <- "http://www.elections.state.md.us/elections/2016/election_data/index.html"
@@ -22,8 +26,7 @@ downloadCSV <- function(filename, baseurl, folder) {
 }
 
 # Перебираем список гиперссылок и загружаем документы:
-for ( i in 1:length(filenames_list))
-{
+for ( i in 1:length(filenames_list)){
   downloadCSV(filenames_list[[i]], 
               baseurl = "http://www.elections.state.md.us/elections/2016/election_data/",
               folder = "elec16_maryland")
